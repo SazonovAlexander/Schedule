@@ -4,7 +4,7 @@
         <attribute name="floor" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="number" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
-        <relationship name="lesson" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Lesson" inverseName="classroom" inverseEntity="Lesson"/>
+        <relationship name="lesson" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Lesson" inverseName="classroom" inverseEntity="Lesson"/>
     </entity>
     <entity name="Lesson" representedClassName="Lesson" syncable="YES">
         <attribute name="color" optional="YES" attributeType="String"/>
@@ -21,11 +21,11 @@
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="phoneNumber" optional="YES" attributeType="String"/>
-        <relationship name="lesson" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Lesson" inverseName="teacher" inverseEntity="Lesson"/>
+        <relationship name="lesson" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Lesson" inverseName="teacher" inverseEntity="Lesson"/>
     </entity>
     <entity name="TypeLesson" representedClassName="TypeLesson" syncable="YES">
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="type" optional="YES" attributeType="String"/>
-        <relationship name="lesson" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Lesson" inverseName="type" inverseEntity="Lesson"/>
+        <relationship name="lesson" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Lesson" inverseName="type" inverseEntity="Lesson"/>
     </entity>
 </model>
